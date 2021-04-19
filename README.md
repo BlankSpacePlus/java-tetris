@@ -1,2 +1,3 @@
-# java_tetris_game
-俄罗斯方块小游戏 ~ Java-GUI 版本
+# Java俄罗斯方块游戏Swing实现
+
+![](tetris/ico/rotatState.png)
