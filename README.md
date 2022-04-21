@@ -1,3 +1,3 @@
-# Java俄罗斯方块游戏Swing实现
+# Java俄罗斯方块游戏
 
-![](tetris/ico/rotatState.png)
+![](src/main/resources/images/tetris.png)
