@@ -23,7 +23,7 @@ public class TetrisFrame extends JFrame {
         this.setSize(540, 595);
         this.setUndecorated(false);
         this.setTitle("俄罗斯方块");
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.addWindowListener(new WindowAdapter() {
             @Override
