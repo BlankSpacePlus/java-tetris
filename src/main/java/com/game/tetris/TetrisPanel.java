@@ -12,6 +12,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -208,7 +209,7 @@ public class TetrisPanel extends JPanel {
     /**
      * 暂停后继续游戏进程
      */
-    private void continueGame() {
+    public void continueGame() {
         this.timer = new Timer();
         this.timer.schedule(new TimerTask() {
             @Override
@@ -332,7 +333,7 @@ public class TetrisPanel extends JPanel {
     /**
      * 暂停游戏进程
      */
-    private void pauseGame() {
+    public void pauseGame() {
         this.timer.cancel();
         this.isPause = true;
         repaint();
@@ -466,6 +467,10 @@ public class TetrisPanel extends JPanel {
         this.isGameOver = true;
         this.timer.cancel();
         repaint();
+        int option = JOptionPane.showConfirmDialog(this, "是否重新开始？", "游戏结束", JOptionPane.YES_NO_OPTION);
+        if (option == JOptionPane.YES_OPTION) {
+            startGame();
+        }
     }
 
     /**
@@ -549,18 +554,18 @@ public class TetrisPanel extends JPanel {
         int x = 290, y = 162, height = 56;
         g.setColor(new Color(FONT_COLOR));
         g.setFont(font);
-        String notice = "SCORE:" + this.scores;
+        String notice = "得分: " + this.scores;
         g.drawString(notice, x, y);
         y += height;
-        notice = "LINES:" + this.lines;
+        notice = "行数: " + this.lines;
         g.drawString(notice, x, y);
         y += height;
-        notice = "[P]Pause";
+        notice = "[P]暂停";
         if (this.isPause) {
-            notice = "[C]Continue";
+            notice = "[C]继续";
         }
         if (this.isGameOver) {
-            notice = "[S]ReStart!";
+            notice = "[S]重新开始";
         }
         g.drawString(notice, x, y);
     }

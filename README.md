@@ -1,3 +1,3 @@
 # Java俄罗斯方块游戏
 
-![](src/main/resources/images/tetris.png)
+![](src/main/resources/images/tetris-run.png)
